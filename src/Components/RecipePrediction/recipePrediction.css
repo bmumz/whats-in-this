@@ -1,0 +1,21 @@
+.container {
+  margin: 2rem;
+}
+
+.predictedIngredients {
+  display: flex;
+  max-width: 300px;
+  width: 50%;
+  padding-top: 10px;
+  background-color: ;
+}
+.ingredients {
+  display: flex;
+  padding-right: 10px;
+  width: 100%;
+}
+
+.foodImage {
+  max-width: 350px;
+  height: auto;
+}

@@ -1,26 +1,62 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Clarifai from "clarifai";
+import "./App.css";
+import Nav from "./Components/nav/nav";
+import ImageLinkForm from "./Components/ImageLinkForm/imageLinkForm";
+// import UserInfo from "./Components/UserInfo/userInfo";
+import RecipePrediction from "./Components/RecipePrediction/recipePrediction";
+const app = new Clarifai.App({
+  apiKey: "4e32a1dc665a4462a7886ee38d1ddcb7",
+});
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.state = { input: "", imageUrl: "", results: [], imageAlt: "" };
+  }
+
+  transformResponse = (data) => {
+    const clarafaiIngredients = data.outputs[0].data.concepts;
+
+    const results = clarafaiIngredients.map((ingredient) => ({
+      ingredients: ingredient.name,
+      probability: ingredient.value,
+    }));
+
+    this.setState({ results });
+  };
+
+  onInputChange = (event) => {
+    this.setState({ input: event.target.value });
+  };
+
+  onButtonSubmit = () => {
+    this.setState({ imageUrl: this.state.input });
+    app.models
+      .predict(Clarifai.FOOD_MODEL, this.state.input)
+      .then((response) => this.transformResponse(response))
+      .catch((err) => console.log(err));
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <Nav />
+
+        <ImageLinkForm
+          onInputChange={this.onInputChange}
+          onButtonSubmit={this.onButtonSubmit}
+        />
+        {/* <UserInfo /> */}
+
+        <RecipePrediction
+          imageUrl={this.state.imageUrl}
+          results={this.state.results}
+          imageAlt=""
+        />
+      </div>
+    );
+  }
 }
 
 export default App;

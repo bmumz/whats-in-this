@@ -1,0 +1,39 @@
+.navbar {
+  background-color: #ce4242;
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  height: auto;
+  border-bottom: 5px solid #ce4242;
+  -moz-box-shadow: inset 0 -10px 3px -10px #fffaf2;
+  -webkit-box-shadow: inset 0 -10px 3px -10px #fffaf2;
+  box-shadow: inset 0 -10px 3px -10px #fffaf2;
+  box-sizing: border-box;
+}
+
+.login {
+  margin-right: 1rem;
+  color: #f8f3ea;
+  width: auto;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.loginContainer {
+  width: 15%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media only screen and (max-width: 420px) {
+  .login {
+    margin-right: 2px;
+  }
+}
