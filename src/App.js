@@ -42,18 +42,16 @@ class App extends Component {
     return (
       <div className="App">
         <Nav />
-
+        <RecipePrediction
+          imageUrl={this.state.imageUrl}
+          results={this.state.results}
+          imageAlt="Your food photo."
+        />
         <ImageLinkForm
           onInputChange={this.onInputChange}
           onButtonSubmit={this.onButtonSubmit}
         />
         {/* <UserInfo /> */}
-
-        <RecipePrediction
-          imageUrl={this.state.imageUrl}
-          results={this.state.results}
-          imageAlt=""
-        />
       </div>
     );
   }

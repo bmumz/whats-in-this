@@ -1,21 +1,68 @@
-.container {
-  margin: 2rem;
+.ingredientsContainer {
+  background-color: #ce4242;
+  padding: 5px;
+  max-width: 650px;
+  min-width: 250px;
+  height: auto;
 }
 
 .predictedIngredients {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   max-width: 300px;
-  width: 50%;
-  padding-top: 10px;
-  background-color: ;
+  min-width: 200px;
+  padding-inline-start: 0px;
 }
-.ingredients {
+
+.ingredients,
+.probability {
   display: flex;
-  padding-right: 10px;
-  width: 100%;
+  line-height: normal;
+}
+
+.ingredients {
+  font-weight: 500;
 }
 
 .foodImage {
   max-width: 350px;
   height: auto;
+  margin: 20px;
+  background: #ece9e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #eeeeee,
+    #ece9e6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #eeeeee, #ece9e6);
+}
+
+.titles {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 350px;
+  min-width: 200px;
+
+  height: auto;
+  text-transform: uppercase;
+  text-decoration: underline;
+  opacity: 0.5;
+  font-size: 12px;
+}
+
+.prediction {
+  background: #ece9e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #eeeeee,
+    #ece9e6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #eeeeee, #ece9e6);
+  width: 55%;
+}
+
+.ingredientsTitle .probabilityTitle {
+  padding: 0;
 }
