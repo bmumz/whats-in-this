@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Clarifai from "clarifai";
 import "./App.css";
 import Nav from "./Components/nav/nav";
+import SignIn from "./Components/signIn/signIn";
+import SignUp from "./Components/signUp/signUp";
 import ImageLinkForm from "./Components/ImageLinkForm/imageLinkForm";
 // import UserInfo from "./Components/UserInfo/userInfo";
 import RecipePrediction from "./Components/RecipePrediction/recipePrediction";
@@ -12,7 +14,13 @@ const app = new Clarifai.App({
 class App extends Component {
   constructor() {
     super();
-    this.state = { input: "", imageUrl: "", results: [], imageAlt: "" };
+    this.state = {
+      input: "",
+      imageUrl: "",
+      results: [],
+      imageAlt: "",
+      route: "signin",
+    };
   }
 
   transformResponse = (data) => {
@@ -38,20 +46,38 @@ class App extends Component {
       .catch((err) => console.log(err));
   };
 
+  onRouteChange = (route) => {
+    this.setState({ route: route });
+  };
+
   render() {
+    let { imageUrl, results } = this.state;
+
     return (
       <div className="App">
-        <Nav />
-        <RecipePrediction
-          imageUrl={this.state.imageUrl}
-          results={this.state.results}
-          imageAlt="Your food photo."
-        />
-        <ImageLinkForm
-          onInputChange={this.onInputChange}
-          onButtonSubmit={this.onButtonSubmit}
-        />
-        {/* <UserInfo /> */}
+        <Nav onRouteChange={this.onRouteChange} />
+        {this.state.route === "home" ? (
+          <div>
+            <RecipePrediction
+              imageUrl={imageUrl}
+              results={results}
+              imageAlt="Your food photo."
+            />
+            <ImageLinkForm
+              onInputChange={this.onInputChange}
+              onButtonSubmit={this.onButtonSubmit}
+            />
+            {/* <UserInfo /> */}
+          </div>
+        ) : this.state.route === "signin" ? (
+          <div>
+            <SignIn onRouteChange={this.onRouteChange} />
+          </div>
+        ) : (
+          <div>
+            <SignUp onRouteChange={this.onRouteChange} />
+          </div>
+        )}
       </div>
     );
   }
