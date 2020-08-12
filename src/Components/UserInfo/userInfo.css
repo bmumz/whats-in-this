@@ -1,4 +1,5 @@
 .userContainer {
+  background-color: #ce4242;
   display: flex;
   flex-direction: column;
   margin: 2rem;
