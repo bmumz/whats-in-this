@@ -40,12 +40,16 @@ class SignUp extends Component {
       });
   };
 
+  handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
   render() {
     return (
       <div className="center mt5">
         <article className="br3 ba dark-gray b--black-10 mv4 mw5">
           <main className="pa4 pa4 shadow-5 bg-white br3 ">
-            <div className="measure">
+            <form className="measure" onSubmit={this.handleSubmit}>
               <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
                 <legend className="f4 fw6 ph0 mh0 center">sign up</legend>
                 <Form onChange={this.onNameInput} inputType="name" />
@@ -53,14 +57,15 @@ class SignUp extends Component {
                 <Form onChange={this.onPasswordInput} inputType="password" />
               </fieldset>
               <div className="center">
-                <input
+                <button
                   className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
                   onClick={this.onSubmitSignUp}
                   type="submit"
-                  value="Sign up"
-                />
+                >
+                  sign up
+                </button>
               </div>
-            </div>
+            </form>
           </main>
         </article>
       </div>

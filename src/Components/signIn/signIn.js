@@ -33,25 +33,30 @@ class SignIn extends Component {
       });
   };
 
+  handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
   render() {
     const { onRouteChange } = this.props;
     return (
       <div className="center mt5">
         <article className="br3 ba dark-gray b--black-10 mv4 mw5">
           <main className="pa4 pa4 shadow-5 bg-white br3 ">
-            <div className="measure">
+            <form className="measure" onSubmit={this.handleSubmit}>
               <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
                 <legend className="f4 fw6 ph0 mh0 center">sign in</legend>
                 <Form onChange={this.onEmailChange} inputType="email" />
                 <Form onChange={this.onPasswordChange} inputType="password" />
               </fieldset>
               <div className="center">
-                <input
+                <button
                   className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
                   onClick={this.onSubmitSignIn}
                   type="submit"
-                  value="sign in"
-                />
+                >
+                  sign in
+                </button>
               </div>
               <p
                 className="center f6 pointer grow"
@@ -59,7 +64,7 @@ class SignIn extends Component {
               >
                 sign up
               </p>
-            </div>
+            </form>
           </main>
         </article>
       </div>

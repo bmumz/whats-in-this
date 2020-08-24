@@ -5,11 +5,12 @@ class Form extends Component {
     let { inputType, onChange } = this.props;
     return (
       <div>
-        <div className="mt3">
+        <div>
           <label className="db fw6 lh-copy f6" htmlFor={inputType}>
             {inputType}
           </label>
           <input
+            required
             className="pa2 input-reset ba bg-transparent hover-black"
             type={inputType}
             name={inputType}
