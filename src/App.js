@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Clarifai from "clarifai";
 import "./App.css";
 import Nav from "./Components/nav/nav";
 import SignIn from "./Components/signIn/signIn";
@@ -7,10 +6,6 @@ import SignUp from "./Components/signUp/signUp";
 import ImageLinkForm from "./Components/ImageLinkForm/imageLinkForm";
 import UserInfo from "./Components/UserInfo/userInfo";
 import RecipePrediction from "./Components/RecipePrediction/recipePrediction";
-
-const app = new Clarifai.App({
-  apiKey: "4e32a1dc665a4462a7886ee38d1ddcb7",
-});
 
 const initialState = {
   input: "",
@@ -63,8 +58,14 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({ imageUrl: this.state.input });
-    app.models
-      .predict(Clarifai.FOOD_MODEL, this.state.input)
+    fetch("http://localhost:3000/imageurl", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        input: this.state.input,
+      }),
+    })
+      .then((response) => response.json())
       .then((response) => {
         if (response) {
           fetch("http://localhost:3000/image", {

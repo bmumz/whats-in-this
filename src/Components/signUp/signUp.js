@@ -33,7 +33,7 @@ class SignUp extends Component {
     })
       .then((response) => response.json())
       .then((user) => {
-        if (user) {
+        if (user.id) {
           this.props.loadUser(user);
           this.props.onRouteChange("home");
         }
@@ -42,7 +42,7 @@ class SignUp extends Component {
 
   render() {
     return (
-      <div className="center ">
+      <div className="center mt5">
         <article className="br3 ba dark-gray b--black-10 mv4 mw5">
           <main className="pa4 pa4 shadow-5 bg-white br3 ">
             <div className="measure">
