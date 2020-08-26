@@ -17,7 +17,7 @@ const RecipePrediciton = ({ imageUrl, results, imageAlt }) => {
 
   if (prediction && prediction.length > 1) {
     return (
-      <div>
+      <div className="parentContainer">
         <div className="center container ingredientsContainer pa4 br3 shadow-5 ">
           <img
             className="foodImage pa2 br3 shadow-5"
