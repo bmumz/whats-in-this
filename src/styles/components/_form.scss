@@ -1,3 +1,9 @@
+.form__page {
+  min-height: 100vh;
+  background-color: $burgandy;
+  padding-top: $l-size;
+}
+
 .form {
   display: flex;
   flex-direction: column;

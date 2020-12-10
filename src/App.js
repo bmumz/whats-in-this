@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Route from "./Components/route";
 import SignIn from "./Components/form/signIn";
 import SignUp from "./Components/form/signUp";
 import About from "./Components/about";
@@ -14,7 +13,6 @@ const initialState = {
   results: [],
   imageAlt: "",
   route: "signin",
-  isSignedIn: false,
   user: {
     id: "",
     name: "",
@@ -98,11 +96,10 @@ class App extends Component {
   };
 
   render() {
-    let { imageUrl, results, route, isSignedIn } = this.state;
+    let { imageUrl, results, route } = this.state;
 
     return (
       <div>
-        <Route isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
         <div className="">
           <About />
           <Features />
@@ -126,15 +123,19 @@ class App extends Component {
               />
             </div>
           ) : route === "signup" ? (
-            <SignUp
-              onRouteChange={this.onRouteChange}
-              loadUser={this.loadUser}
-            />
+            <div className="form__page">
+              <SignUp
+                onRouteChange={this.onRouteChange}
+                loadUser={this.loadUser}
+              />
+            </div>
           ) : (
-            <SignIn
-              onRouteChange={this.onRouteChange}
-              loadUser={this.loadUser}
-            />
+            <div className="form__page">
+              <SignIn
+                onRouteChange={this.onRouteChange}
+                loadUser={this.loadUser}
+              />
+            </div>
           )}
         </div>
       </div>
