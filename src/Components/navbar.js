@@ -9,6 +9,7 @@ const Logo = () => {
         <Tilt className="tilt">
           <img src={foodLogo} alt="logo" className="navbar__img" />
         </Tilt>
+        <img src={foodLogo} alt="logo" className="navbar__imgMobile" />
       </div>
     </div>
   );
