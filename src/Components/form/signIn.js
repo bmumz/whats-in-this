@@ -52,7 +52,7 @@ class SignIn extends Component {
           </fieldset>
           <div className="form__button">
             <button
-              className="grow"
+              className="grow shadow-5"
               onClick={this.onSubmitSignIn}
               type="submit"
             >

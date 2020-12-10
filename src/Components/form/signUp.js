@@ -60,7 +60,7 @@ class SignUp extends Component {
           </fieldset>
           <div className="form__button">
             <button
-              className="grow"
+              className="grow shadow-5"
               onClick={this.onSubmitSignUp}
               type="submit"
             >

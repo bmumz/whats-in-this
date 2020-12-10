@@ -25,6 +25,7 @@
   overflow: scroll;
   text-transform: capitalize;
   font-weight: 300;
+  margin-bottom: $m-size;
 }
 
 .prediction__titles {
@@ -36,13 +37,14 @@
   opacity: 0.6;
   font-size: 1rem;
   padding: $s-size $m-size;
+  margin-bottom: $s-size;
 }
 
 ul {
   list-style: none;
   display: flex;
   justify-content: space-between;
-  padding: 0 $m-size;
+  padding: 0 $xs-size;
 }
 
 @media (min-width: $desktop-breakpoint) {
@@ -61,5 +63,6 @@ ul {
 
   .prediction__img {
     width: 500px;
+    margin-bottom: $l-size;
   }
 }
