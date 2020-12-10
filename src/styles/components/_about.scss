@@ -6,7 +6,7 @@
 }
 
 .about__text {
-  padding: $m-size;
+  padding: $s-size;
 }
 
 .about__img {
@@ -21,7 +21,7 @@
 
 .about__button {
   font-size: 1.2rem;
-  background-color: #c20013;
+  background-color: $burgandy;
   color: $font-color;
   margin: $s-size $s-size $s-size 0;
   padding: $s-size $m-size;
@@ -33,7 +33,7 @@
   border-radius: 30px;
   .about__button:active {
     transition: all 0.5s ease-in-out;
-    color: #c20013;
+    color: $burgandy;
   }
   .about__button:hover {
     transition: all 0.5s ease-in-out;
@@ -60,7 +60,7 @@
   }
 
   .about__text {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   p {

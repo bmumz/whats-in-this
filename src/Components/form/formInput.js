@@ -5,13 +5,13 @@ class FormInput extends Component {
     let { inputType, onChange } = this.props;
     return (
       <div>
-        <div>
-          <label className="db fw6 lh-copy f6" htmlFor={inputType}>
+        <div className="mt3">
+          <label className="ml2 db fw4 lh-copy f5" htmlFor={inputType}>
             {inputType}
           </label>
           <input
             required
-            className="pa2 input-reset ba bg-transparent hover-black"
+            className="form__input pa2 br4 input-reset ba bg-transparent hover-black"
             type={inputType}
             name={inputType}
             id={inputType}

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Form from "../form/form";
+import FormInput from "./formInput";
 
 class SignUp extends Component {
   constructor(props) {
@@ -45,29 +45,35 @@ class SignUp extends Component {
   };
 
   render() {
+    const { onRouteChange } = this.props;
     return (
-      <div className="center mt5">
-        <article className="br3 ba dark-gray b--black-10 mv4 mw5">
-          <main className="pa4 pa4 shadow-5 bg-white br3 ">
-            <form className="measure" onSubmit={this.handleSubmit}>
-              <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-                <legend className="f4 fw6 ph0 mh0 center">sign up</legend>
-                <Form onChange={this.onNameInput} inputType="name" />
-                <Form onChange={this.onEmailInput} inputType="email" />
-                <Form onChange={this.onPasswordInput} inputType="password" />
-              </fieldset>
-              <div className="center">
-                <button
-                  className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
-                  onClick={this.onSubmitSignUp}
-                  type="submit"
-                >
-                  sign up
-                </button>
-              </div>
-            </form>
-          </main>
-        </article>
+      <div id="route">
+        <form
+          className="form center f5 measure-narrow shadow-5 pa4 br3"
+          onSubmit={this.handleSubmit}
+        >
+          <fieldset id="sign_up" className="center b--transparent ">
+            <legend className="f4 fw6 ph0 mh0 center">sign up</legend>
+            <FormInput onChange={this.onNameInput} inputType="name" />
+            <FormInput onChange={this.onEmailInput} inputType="email" />
+            <FormInput onChange={this.onPasswordInput} inputType="password" />
+          </fieldset>
+          <div className="form__button">
+            <button
+              className="grow"
+              onClick={this.onSubmitSignUp}
+              type="submit"
+            >
+              sign up
+            </button>
+          </div>
+          <p
+            className="f5 mt3 pointer center"
+            onClick={() => onRouteChange("signin")}
+          >
+            sign in
+          </p>
+        </form>
       </div>
     );
   }

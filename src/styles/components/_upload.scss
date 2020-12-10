@@ -1,0 +1,51 @@
+.upload {
+  display: flex;
+  flex-direction: column;
+}
+
+.upload__text {
+  font-size: 1.2rem;
+}
+
+.upload__bar {
+  width: 60vw;
+  outline: 0;
+  border: 0;
+}
+
+.upload__button {
+  background-color: darken($burgandy, 5);
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 300;
+  padding: $xs-size $s-size;
+  cursor: pointer;
+  margin-left: $xs-size;
+}
+
+.upload__profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: $s-size;
+}
+
+.upload__entries {
+  font-size: $s-size;
+  color: lighten($nude, 3);
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .upload__profile {
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 0;
+  }
+  .upload__bar {
+    width: 30vw;
+  }
+
+  .upload__button {
+    margin: $s-size;
+  }
+}

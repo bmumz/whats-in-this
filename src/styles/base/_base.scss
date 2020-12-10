@@ -3,7 +3,7 @@ html {
 }
 
 button {
-  background-color: #c20013;
+  background-color: $burgandy;
   border: none;
   color: $font-color;
   margin: $m-size;
@@ -14,10 +14,6 @@ button {
   transition: all 0.5s ease-in-out;
   outline: none;
   border-radius: 30px;
-  button:active {
-    transition: all 0.5s ease-in-out;
-    color: #c20013;
-  }
 }
 
 a {
@@ -26,15 +22,15 @@ a {
 }
 
 a:hover {
-  color: #222222;
+  color: $darker-black;
   cursor: pointer;
 }
 
 a:active {
-  color: #222222;
+  color: $darker-black;
 }
 body {
-  background-color: #fbeedc;
+  background-color: $nude;
   font-family: Helvetica, Arial, Helvetica, sans-serif;
   font-size: $m-size;
   word-wrap: break-word;
@@ -78,6 +74,12 @@ hr {
   outline: none;
   opacity: 20%;
 }
+
+form {
+  background-color: lighten($nude, 5);
+  margin: $l-size;
+}
+
 .title {
   text-align: center;
   color: $font-color;

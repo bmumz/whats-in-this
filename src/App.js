@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Route from "./Components/route";
-import SignIn from "./Components/signIn";
-import SignUp from "./Components/signUp";
+import SignIn from "./Components/form/signIn";
+import SignUp from "./Components/form/signUp";
 import About from "./Components/about";
 import Features from "./Components/features";
 import ImageUrl from "./Components/imageUrl";
@@ -107,19 +107,22 @@ class App extends Component {
           <About />
           <Features />
           {route === "home" ? (
-            <div>
+            <div className="prediction__page" id="route">
+              <div className="upload__profile">
+                <ImageUrl
+                  onInputChange={this.onInputChange}
+                  onButtonSubmit={this.onButtonSubmit}
+                />
+
+                <UserTracking
+                  name={this.state.user.name}
+                  entries={this.state.user.entries}
+                />
+              </div>
               <PredictedIngredients
                 imageUrl={imageUrl}
                 results={results}
                 imageAlt="Your food photo."
-              />
-              <ImageUrl
-                onInputChange={this.onInputChange}
-                onButtonSubmit={this.onButtonSubmit}
-              />
-              <UserTracking
-                name={this.state.user.name}
-                entries={this.state.user.entries}
               />
             </div>
           ) : route === "signup" ? (
