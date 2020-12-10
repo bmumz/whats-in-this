@@ -1,7 +1,7 @@
 import React from "react";
-import "./userInfo.css";
+// import "./userInfo.css";
 
-const UserInfo = ({ name, entries }) => {
+const UserTracking = ({ name, entries }) => {
   return (
     <div className="container">
       <div className="userContainer br3 center">
@@ -15,4 +15,4 @@ const UserInfo = ({ name, entries }) => {
   );
 };
 
-export default UserInfo;
+export default UserTracking;

@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import "./App.css";
-import Nav from "./Components/nav/nav";
-import SignIn from "./Components/signIn/signIn";
-import SignUp from "./Components/signUp/signUp";
-import ImageLinkForm from "./Components/ImageLinkForm/imageLinkForm";
-import UserInfo from "./Components/UserInfo/userInfo";
-import RecipePrediction from "./Components/RecipePrediction/recipePrediction";
+import Route from "./Components/route";
+import SignIn from "./Components/signIn";
+import SignUp from "./Components/signUp";
+import About from "./Components/about";
+import Features from "./Components/features";
+import ImageUrl from "./Components/imageUrl";
+import UserTracking from "./Components/userTracking";
+import PredictedIngredients from "./Components/predictedIngredients";
 
 const initialState = {
   input: "",
@@ -100,39 +101,39 @@ class App extends Component {
     let { imageUrl, results, route, isSignedIn } = this.state;
 
     return (
-      <div className="App">
-        <Nav isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
-        {route === "home" ? (
-          <div>
-            <UserInfo
-              name={this.state.user.name}
-              entries={this.state.user.entries}
-            />
-            <RecipePrediction
-              imageUrl={imageUrl}
-              results={results}
-              imageAlt="Your food photo."
-            />
-            <ImageLinkForm
-              onInputChange={this.onInputChange}
-              onButtonSubmit={this.onButtonSubmit}
-            />
-          </div>
-        ) : route === "signup" ? (
-          <div>
+      <div>
+        <Route isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
+        <div className="">
+          <About />
+          <Features />
+          {route === "home" ? (
+            <div>
+              <PredictedIngredients
+                imageUrl={imageUrl}
+                results={results}
+                imageAlt="Your food photo."
+              />
+              <ImageUrl
+                onInputChange={this.onInputChange}
+                onButtonSubmit={this.onButtonSubmit}
+              />
+              <UserTracking
+                name={this.state.user.name}
+                entries={this.state.user.entries}
+              />
+            </div>
+          ) : route === "signup" ? (
             <SignUp
               onRouteChange={this.onRouteChange}
               loadUser={this.loadUser}
             />
-          </div>
-        ) : (
-          <div>
+          ) : (
             <SignIn
               onRouteChange={this.onRouteChange}
               loadUser={this.loadUser}
             />
-          </div>
-        )}
+          )}
+        </div>
       </div>
     );
   }

@@ -1,7 +1,7 @@
 import React from "react";
-import "./recipePrediction.css";
+// import "./recipePrediction.css";
 
-const RecipePrediciton = ({ imageUrl, results, imageAlt }) => {
+const PredictedIngredients = ({ imageUrl, results, imageAlt }) => {
   const prediction = results.map((result, index) => {
     const { ingredients, probability } = result;
     const percentage = (probability * 100).toFixed(2) + "%";
@@ -18,7 +18,27 @@ const RecipePrediciton = ({ imageUrl, results, imageAlt }) => {
   if (prediction && prediction.length > 1) {
     return (
       <div className="parentContainer">
-        <div className="center container ingredientsContainer pa4 br3 shadow-5 ">
+        <div className="center ingredientsContainer pa4 br3 shadow-5">
+          <img
+            className="foodImage pa2 br3 shadow-5pa4 br3 shadow-5"
+            src={imageUrl}
+            alt={imageAlt}
+          />{" "}
+          <div className="prediction br3 shadow-5">
+            <div className="titles">
+              <div className="ingredientsTitle">
+                Predicted
+                <br /> Ingredients:
+              </div>
+              <div className="probabilityTitle">
+                <br />
+                Probability:
+              </div>
+            </div>
+            {prediction}
+          </div>
+        </div>
+        {/* <div className="center container ingredientsContainer pa4 br3 shadow-5 ">
           <img
             className="foodImage pa2 br3 shadow-5"
             src={imageUrl}
@@ -31,7 +51,7 @@ const RecipePrediciton = ({ imageUrl, results, imageAlt }) => {
             </div>
             {prediction}
           </div>
-        </div>
+        </div> */}
       </div>
     );
   } else {
@@ -39,4 +59,4 @@ const RecipePrediciton = ({ imageUrl, results, imageAlt }) => {
   }
 };
 
-export default RecipePrediciton;
+export default PredictedIngredients;

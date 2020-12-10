@@ -1,31 +1,53 @@
-@font-face {
-  font-family: "Anttariksa";
-  src: url("../Fonts/Anttariksa.otf") format(.otf);
-}
 .logoImg {
-  min-width: 75px;
-  min-height: 75px;
-  max-width: 100px;
-  max-height: 100px;
 }
 
+.logoContainer {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  width: 10%;
+  height: auto;
+}
+
+.headerContainer {
+  display: flex;
+  align-content: center;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-around;
+  width: 35vw;
+  align-items: center;
+  margin-left: 2rem;
+}
+button {
+  height: 40px;
+}
+
+h3 {
+  font-weight: 400;
+}
+/* 
 .title {
   text-shadow: 0px 1px #121111;
   padding: 5px;
   margin: 0px;
   font-family: "Anttariksa";
   font-size: 35px;
-  color: #fffaf2;
+  color: #fffaf2; */
 
-  /* transform: rotate(-15deg); */
-}
+/* transform: rotate(-15deg); */
+/* } */
 
+/* 
 .parent {
   display: flex;
   align-items: center;
 }
 
-*/ .logo {
+.logo {
   margin-top: 2rem;
   display: flex;
 }
@@ -34,7 +56,7 @@
   display: flex;
 
   justify-content: flex-start;
-  /* width: 100vw; */
+ 
   height: auto;
   margin-left: 2rem;
 }
@@ -57,4 +79,4 @@
     width: 75px;
     height: auto;
   }
-}
+} */

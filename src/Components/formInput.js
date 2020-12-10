@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Form extends Component {
+class FormInput extends Component {
   render() {
     let { inputType, onChange } = this.props;
     return (
@@ -23,4 +23,4 @@ class Form extends Component {
   }
 }
 
-export default Form;
+export default FormInput;

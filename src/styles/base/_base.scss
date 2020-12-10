@@ -1,0 +1,87 @@
+html {
+  margin: 0 auto;
+}
+
+button {
+  background-color: #c20013;
+  border: none;
+  color: $font-color;
+  margin: $m-size;
+  padding: $s-size $m-size;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 300;
+  transition: all 0.5s ease-in-out;
+  outline: none;
+  border-radius: 30px;
+  button:active {
+    transition: all 0.5s ease-in-out;
+    color: #c20013;
+  }
+}
+
+a {
+  color: $almost-black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #222222;
+  cursor: pointer;
+}
+
+a:active {
+  color: #222222;
+}
+body {
+  background-color: #fbeedc;
+  font-family: Helvetica, Arial, Helvetica, sans-serif;
+  font-size: $m-size;
+  word-wrap: break-word;
+  font-weight: normal;
+}
+
+h1 {
+  color: $font-color;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-weight: bold;
+  font-size: $xl-size;
+  font-weight: 400;
+}
+h2,
+h3,
+h4 {
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+p {
+  color: $almost-black;
+  font-weight: 200;
+  margin: 0;
+}
+
+textarea {
+  min-height: 15rem;
+}
+
+ul {
+  margin: 0;
+  padding-left: $m-size;
+}
+
+hr {
+  background-color: $almost-black;
+  border: none;
+  height: 0.5px;
+  outline: none;
+  opacity: 20%;
+}
+.title {
+  text-align: center;
+  color: $font-color;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 400;
+}

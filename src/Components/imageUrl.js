@@ -1,7 +1,6 @@
 import React from "react";
-import "./imageLinkForm.css";
 
-const ImageLinkForm = ({ onInputChange, onButtonSubmit }) => {
+const ImageUrl = ({ onInputChange, onButtonSubmit }) => {
   return (
     <div className="container">
       <p className="f5 pa2 center">
@@ -29,4 +28,4 @@ const ImageLinkForm = ({ onInputChange, onButtonSubmit }) => {
   );
 };
 
-export default ImageLinkForm;
+export default ImageUrl;

@@ -1,0 +1,21 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar__img {
+  margin-top: $m-size;
+  width: 50%;
+  height: auto;
+  min-width: 150px;
+  max-width: 500px;
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .navbar {
+    justify-content: center;
+  }
+  .navbar__img {
+    width: 75%;
+  }
+}

@@ -40,7 +40,7 @@ class SignIn extends Component {
   render() {
     const { onRouteChange } = this.props;
     return (
-      <div className="center mt5">
+      <div className="center mt5" id="route">
         <article className="br3 ba dark-gray b--black-10 mv4 mw5">
           <main className="pa4 pa4 shadow-5 bg-white br3 ">
             <form className="measure" onSubmit={this.handleSubmit}>
