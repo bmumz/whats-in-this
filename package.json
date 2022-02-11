@@ -11,7 +11,7 @@
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^16.13.1",
     "react-parallax-tilt": "^1.4.58",
-    "react-scripts": "^4.0.0",
+    "react-scripts": "^5.0.0",
     "serve": "^13.0.2",
     "tachyons": "^4.12.0"
   },
