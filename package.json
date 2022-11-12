@@ -13,7 +13,7 @@
     "react-dom": "^16.13.1",
     "react-parallax-tilt": "^1.4.58",
     "react-scripts": "^5.0.0",
-    "serve": "^13.0.2",
+    "serve": "^14.1.1",
     "tachyons": "^4.12.0"
   },
   "scripts": {
